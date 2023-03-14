@@ -1,3 +1,4 @@
 include 'producer-consumer-problem'
 include 'pttget'
+include 'blackjack'
 
