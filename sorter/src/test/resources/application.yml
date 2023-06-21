@@ -1,0 +1,12 @@
+
+sorter:
+  date:
+    key: timestamp
+    format: YYYY-MM-DDTHH:mm:ss.SSSZ
+  provider:
+    csv-file:
+      location: 123
+  exporter:
+    table-file:
+      location: 456
+      sort-keys: timestamp, pid, thread, severity, class, line_number, rest
