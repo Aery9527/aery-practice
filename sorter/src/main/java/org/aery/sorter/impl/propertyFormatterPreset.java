@@ -1,4 +1,4 @@
-package org.aery.sorter.api.impl;
+package org.aery.sorter.impl;
 
 import org.aery.sorter.api.propertyFormatter;
 import org.springframework.stereotype.Component;

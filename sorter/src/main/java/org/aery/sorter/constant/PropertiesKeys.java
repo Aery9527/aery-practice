@@ -15,7 +15,7 @@ public class PropertiesKeys {
 
     public static class Exporter {
         private static final String PREFIX = PropertiesKeys.PREFIX + ".exporter";
-        public static final String TABLE_FILE = PREFIX + ".table-file";
+        public static final String CSV_FILE = PREFIX + ".csv-file";
     }
 
 }

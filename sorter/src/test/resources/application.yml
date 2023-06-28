@@ -2,11 +2,11 @@
 sorter:
   date:
     key: timestamp
-    format: YYYY-MM-DDTHH:mm:ss.SSSZ
+    format: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'
   provider:
     csv-file:
-      location: 123
+      location: data.csv
   exporter:
-    table-file:
-      location: 456
-      sort-keys: timestamp, pid, thread, severity, class, line_number, rest
+    csv-file:
+      location: sort.csv
+      sort-keys: ${sorter.date.key}, level, msg

@@ -1,4 +1,4 @@
-package org.aery.sorter.api.impl;
+package org.aery.sorter.impl;
 
 import org.aery.sorter.Application;
 import org.aery.sorter.api.Sorter;
