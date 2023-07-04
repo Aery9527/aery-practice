@@ -1,6 +1,7 @@
 package org.aery.sorter.impl.provider;
 
 import com.opencsv.CSVReader;
+import com.opencsv.CSVReaderBuilder;
 import com.opencsv.exceptions.CsvValidationException;
 import org.aery.sorter.api.DataProvider;
 import org.aery.sorter.api.propertyFormatter;
@@ -66,7 +67,25 @@ public class CsvFileProvider extends CsvFileDataIO<CSVReader> implements DataPro
     @Override
     protected CSVReader openTarget(File file) throws IOException {
         FileReader fileReader = new FileReader(file);
-        return new CSVReader(fileReader);
+//        CSVReader reader = new CSVReader(fileReader);
+        CSVReaderBuilder builder = new CSVReaderBuilder(fileReader);
+        return builder
+//                .withKeepCarriageReturn(true)
+//                .withMultilineLimit(Integer.MAX_VALUE)
+//                .withRowProcessor(new RowProcessor() {
+//                    @Override
+//                    public String processColumnItem(String column) {
+//                        return column;
+//                    }
+//
+//                    @Override
+//                    public void processRow(String[] row) {
+//                        for (int i = 0; i < row.length; i++) {
+//
+//                        }
+//                    }
+//                })
+                .build();
     }
 
     @Override
@@ -82,6 +101,7 @@ public class CsvFileProvider extends CsvFileDataIO<CSVReader> implements DataPro
             for (int i = 0; i < this.titles.size(); i++) {
                 String key = this.titles.get(i);
                 String value = nextLine[i];
+                value = value.trim();
                 dataMap.put(key, value);
             }
 

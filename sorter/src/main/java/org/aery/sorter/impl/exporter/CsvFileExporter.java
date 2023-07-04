@@ -9,6 +9,7 @@ import org.aery.sorter.impl.io.CsvFileDataIO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +21,11 @@ import java.util.List;
 import java.util.Map;
 
 @Service
+@ConditionalOnProperty(
+        name = PropertiesKeys.Exporter.USE,
+        havingValue = PropertiesKeys.ExporterUse.CSV,
+        matchIfMissing = true
+)
 @ConfigurationProperties(prefix = PropertiesKeys.Exporter.CSV_FILE)
 public class CsvFileExporter extends CsvFileDataIO<CSVWriter> implements DataExporter {
 

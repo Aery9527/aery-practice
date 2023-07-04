@@ -7,6 +7,10 @@ sorter:
     csv-file:
       location: data.csv
   exporter:
+    use: table-file
+    table-file:
+      location: sort-table.txt
+      sort-keys: ${sorter.date.key}, level, level:!, number:%5.2f, msg:|
     csv-file:
       location: sort.csv
       sort-keys: ${sorter.date.key}, level, msg
